@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" />
+    <title>AI Chatbot</title>
+    <link rel="icon" href="/img/medicologo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/index.css" />
+    <script defer type="module" src="/js/script.js"></script>
+  </head>
+  <body>
+    <div
+      id="page-container"
+      class="d-flex flex-column justify-center align-items-center ml-auto mt-2"
+    >
+      <h1>
+        Hey, welcome to
+        <span class="text-primary">Medico</span>, an
+        <span class="text-primary">AI Chatbot</span>!
+      </h1>
+      <div id="chat-log"></div>
+      <form
+        id="user-input-form"
+        class="w-100 d-flex mt-auto mb-4 justify-content-center"
+      >
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Type your message here..."
+          class="rounded-pill col-6 mr-2 border border-primary"
+        />
+        <button
+          type="submit"
+          id="send-button"
+          class="rounded-circle px-3 d-flex align-items-center justify-content-center"
+          disabled
+        >
+          <img
+            src="/img/sendarrow.png"
+            id="send-button-arrow"
+            draggable="false"
+          />
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
