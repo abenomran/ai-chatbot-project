@@ -2,3 +2,4 @@
 
 # local environments
 .env
+.env.backend
