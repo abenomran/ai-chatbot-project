@@ -14,6 +14,8 @@ body {
   border-radius: 15px;
   background-color: #ececec;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 #send-button {
@@ -48,4 +50,8 @@ body {
 
 #userInput {
   background: #ececec;
+}
+
+.user-text-bubble {
+  background: #0d6efd;
 }

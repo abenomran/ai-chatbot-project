@@ -18,7 +18,7 @@ async function sendTest() {
 async function sendMessage() {
   const userMessage = userInput.value;
 
-  chatLog.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
+  chatLog.innerHTML += `<p class="user-text-bubble rounded-pill px-2 py-1 text-white ml-auto">${userMessage}</p>`;
   userInput.value = "";
   scrollToBottom();
 
@@ -31,7 +31,7 @@ async function sendMessage() {
     mode: "cors",
   });
 
-  chatLog.innerHTML += `<p><strong>Bot: </strong></p>`;
+  chatLog.innerHTML += `<p class="px-2 pt-1 mr-auto"></p>`;
   let lastParagraph = chatLog.querySelector("p:last-child");
 
   const reader = response.body.getReader();
@@ -52,8 +52,18 @@ async function sendMessage() {
       continue;
     }
 
+    // Dynamically switch class based on the content length
+    if (output.length > 200) {
+      // Adjust this threshold as needed
+      lastParagraph.classList.remove("rounded-pill");
+      lastParagraph.classList.add("rounded-lg");
+    } else {
+      lastParagraph.classList.add("rounded-pill");
+      lastParagraph.classList.remove("rounded-lg");
+    }
+
     //lastParagraph.innerHTML += output;
-    lastParagraph.innerHTML = `<p><strong>Bot: </strong>${output}</p>`;
+    lastParagraph.innerHTML = `<p class="px-2 pt-1 mr-auto">${output}</p>`;
     scrollToBottom();
   }
 }

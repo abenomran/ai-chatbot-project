@@ -6,7 +6,7 @@ const sendBtn = document.querySelector("#send-button");
 async function sendMessage() {
   const userMessage = userInput.value;
 
-  chatLog.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
+  chatLog.innerHTML += `<p>${userMessage}</p>`;
   userInput.value = "";
   scrollToBottom();
 
